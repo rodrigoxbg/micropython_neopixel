@@ -90,29 +90,28 @@ class Neopix:
         return mm
     
     def crea_rr(self,ltt,cbit):
-        x = dameletra(ltt)
-        s = [0] * len(x)
-       
-        for p in range(0,8):
-            s[p] = self.comple_t(x[p],len(s))
-        s[p+1] = x[len(x)-1]
-
-        mini = 8
-        for mtmt in range(0,len(s)-1):
-            cont = 0
-            for vx in s[mtmt]:
-                if(vx == '1' and cont < mini ):
-                    mini = cont
-                cont = cont + 1
-                
-        mtv = [0]*8
-        for mt2 in range(0,len(s)-1):
-            mm2 = ''
-            for vx in range(0,x[8]):
-                mm2 = mm2 + s[mt2][mini+vx]
-            mm2 = mm2 + '0'
-            mtv[mt2] = mm2
-            
+        if (ord(ltt) != 32):
+            x = dameletra(ltt)
+            s = [0] * len(x)
+            for p in range(0,8):
+                s[p] = self.comple_t(x[p],len(s))
+            s[p+1] = x[len(x)-1]
+            mini = 8
+            for mtmt in range(0,len(s)-1):
+                cont = 0
+                for vx in s[mtmt]:
+                    if(vx == '1' and cont < mini ):
+                        mini = cont
+                    cont = cont + 1
+            mtv = [0]*8
+            for mt2 in range(0,len(s)-1):
+                mm2 = ''
+                for vx in range(0,x[8]):
+                    mm2 = mm2 + s[mt2][mini+vx]
+                mm2 = mm2 + '0'
+                mtv[mt2] = mm2
+        else:
+            mtv = ['000']*8
         return mtv
     
     def concatena_l(self,cadena):
