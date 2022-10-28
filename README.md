@@ -29,3 +29,24 @@ cartel = neopx.Neopix(32,8,machine.Pin(4))
 
 ## Simple Pixel
 
+To turn on a simple pixel, first we have to create a new color. This color is a tuple of RGB 8bits. It mean from 0 to 255.
+then we have to call a constructor and select the coordinates in x and y. Then send the color.
+Finally we have to write everything to the matrix using the function show()
+
+```
+import machine
+import lib_neopix as neopx
+
+cartel = neopx.Neopix(32,8,machine.Pin(4))
+
+color_green = (0,180,0)
+
+cartel.pixel(2,3,color_green)
+cartel.show()
+
+```
+
+
+
+
+
