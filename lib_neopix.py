@@ -163,10 +163,7 @@ class Neopix:
         frame = 0                          # Currently displayed frame.
         posx = 32
         mtr = self.concatena_l(text)
-        
-        for bt in mtr:
-            print(bt)
-            
+
         while True:
             self.fill(0)
             self.mono_matriz(mtr,posx,0,color)
